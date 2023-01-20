@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>APOPWA Work</title>
+  <meta content="Summary of Atlanta Publicly Owned Property Web App Project" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=https://fonts.googleapis.com/css?family=Inconsolata:400,500,600,700|Raleway:400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: MyPortfolio - v4.4.0
+  * Template URL: https://bootstrapmade.com/myportfolio-bootstrap-portfolio-website-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Navbar ======= -->
+  <div class="collapse navbar-collapse custom-navmenu" id="main-navbar">
+    <div class="container py-2 py-md-5">
+      <div class="row align-items-start">
+        <div class="col-md-2">
+          <ul class="custom-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li class="active"><a href="works.html">Works</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-6 d-none d-md-block  mr-auto">
+            <p>Welcome to my page! I've spent some time documenting my work, my interests, and random things about myself here. I hope you find what your looking for. Please do look around!</p>
+        </div>
+        <div class="col-md-4 d-none d-md-block">
+            <h3>Work With Me</h3>
+            <p>I am interested in summer 2022 internship opportunities. If you believe I might be a good fit for your team and our interests align please reach out to my email. <br> <a href="#">billhuang@gatech.edu</a></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <nav class="navbar navbar-light custom-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Bill's Portfolio.</a>
+      <a href="#" class="burger" data-bs-toggle="collapse" data-bs-target="#main-navbar">
+        <span></span>
+      </a>
+    </div>
+  </nav>
+
+  <main id="main">
+
+    <section class="section">
+      <div class="container">
+        <div class="row mb-4 align-items-center">
+          <div class="col-md-6" data-aos="fade-up">
+            <h2>Atlanta Publicly Owned Property Web App</h2>
+            <p>TLDR: Created a toolset for the City of Atlanta City Planning Department to use that prioritized what publicly owned properties to develop various typologies of establishments(housing, commercial, etc.) upon</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="site-section pb-0">
+        <div class="container">
+          <div class="row align-items-stretch">
+            <div class="col-md-6" data-aos="fade-up">
+              <img src="assets/img/APOPWA1.png" alt="Image" class="img-fluid">
+            </div>
+            <div class="col-md-6 ml-auto" data-aos="fade-up" data-aos-delay="100">
+              <div class="sticky-content">
+                <h5 class="h5">Topics</h5>
+                <p class="mb-4"><span class="text-muted">Multi-Criteria Decision Analysis(MCDA), Property Development, Data, ArcGIS Pro, ArcGIS Online, ArcGIS Web App, Excel, Project Definition, City Planning, User Design</span></p>
+
+                <div class="mb-5">
+                  <h5 class="h5">Project Motivation</h5>
+                  <p>The intention of this toolset is to help all parties interested in stewarding public-owned properties well. The toolset enables users to have more informed decisions of what public properties would be best preserved, developed, or renovated for the good of Atlanta. These tools were developed to gather data and analyze the publicly-owned land inside the City of Atlanta. As the toolset was originally intended for the use of the Office of Housing and Community Development, the tool tends to display data and enable analysis that is oriented toward said office’s work. However, with the interest of transparency and enabling public residents, this toolset has been redirected for public use as well.</p>
+                </div>
+
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      <div class="container">
+        <div class="row align-items-stretch">
+          <div class="col-md-6">
+            <img src="assets/img/APOPWA1_zoomin.png" alt="Image" class="img-fluid">
+            <p> filter tool pane</p>
+          </div>
+          <div class="col-md-6">
+            <h5>Built Features</h5>
+            <ul>
+              <li>property development score</li>
+              <li>attribute filtering</li>
+              <li>spatial filtering</li>
+              <li>upload custom layer data</li>
+              <li>property search & exploration</li>
+              <li>export properties after transformations</li>
+            </ul>
+            <h5>Project Walkthrough</h5>
+            <p>I built this tool up starting from an excel sheet of parcels. My supervisor was awesome in
+              giving me guidance and feedback through this project though!
+              I used ArcGIS Pro to perform attribute and spatial joins to create the base layers for this
+              map. My knowledge of property development assisted me in selecting relevant variables to analysis
+              the properties through. I then had to find the data for these variables.
+              This part took a long time, I had to go snooping around the organization, partner orgs, and the internet
+              for additional data sources that were not immediately avaliable to me. I used internal data sources
+              for the city parks, federal online sources for the raster slope topoology, and reached out to
+              Atlanta Housing Authority for various tax data. 
+            </p>
+            <p>
+              The meat of my work then came when deciding the methodology to determine which properties were fit
+              for certain development types. I researched MCDA and debated using multiple methods like AHP and
+              TOPSIS. However, I decided to go with the simplest which is closest to a weighted summation 
+              because City of Atlanta(CoA) staff was not able to support that level of ongoing detailed analysis
+              at that time. All of the data source variables were fed into ArcGIS Pro and Python was used to
+              automate the algorithm in ArcGIS to score and rank each parcel based upon its suitability for
+              certain types of development(multi-use residential, park, affordable housing, etc.).
+            </p>
+            <p>
+              While I had generated these results, there was no easy way to explore and view them. From there,
+              I created an outward facing ArcGIS Webapp which includes the funcationalities mentioned above
+              and more! An example of the filtering capability is shown to the left where a user can specify
+              the size of property they want to look at. You can see the result before and after below amongst
+              other example funcationalities of the tool!
+            </p>
+          </div>
+        </div>
+        <div class="row align-items-stretch">
+          <div class="col-md-6">
+            <p>&nbsp</p>
+            <h6>Before Size Filter</h6>
+            <img src="assets/img/APOPWA1.png"
+                  width="1000">
+            <p>&nbsp</p>
+            <h6>After Size Filter (Display Properties Lower than 3 acres)</h6>
+            <img src="assets/img/APOPWA2.png"
+                  width="1000">
+            <p>&nbsp</p>
+            <h6>School Dist. Filter Pane</h6>
+            <img src="assets/img/APOPWA3.png" width="500">
+            <p>&nbsp</p>
+            <h6>After School Dist. Filter</h6>
+            <img src="assets/img/APOPWA4.png" width="1000">
+            <p>&nbsp</p>
+            <h6>Property Exploration</h6>
+            <img src="assets/img/APOPWA7.png" width="1000">
+            <p>&nbsp</p>
+            <h6>Details avaliable for more details</h6>
+            <img src="assets/img/APOPWA6.png" width="1000">
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- ======= Testimonials Section ======= -->
+    <section class="section pt-0">
+      <div class="container">
+
+        <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                  <div class="testimonial-wrap">
+                    <div class="testimonial">
+                      <img src="assets/img/person_1.jpg" alt="Image" class="img-fluid">
+                      <blockquote>
+                        <p>I wanted to thank you... for your leadership and dedication to this project... You really shaped this project and implemented a vision for it... I really trusted your work. You elevated this project beyond what would have been possible had we not had you on board.</p>
+                      </blockquote>
+                      <p>&mdash; City of Atlanta Department of City Planning Supervisor</p>
+                    </div>
+                  </div>
+                </div><!-- End testimonial item -->
+    
+                <div class="swiper-slide">
+                  <div class="testimonial-wrap">
+                    <div class="testimonial">
+                      <img src="assets/img/person_2.jpg" alt="Image" class="img-fluid">
+                      <blockquote>
+                        <p>You did a great job... from coming up to speed quickly on how to best work with our team to completing all tasks efficiently and with a high quality of work. For every task given, especially larger ones, you were good at taking ownership of the project with minimal direction needed.</p>
+                      </blockquote>
+                      <p>&mdash; East West Manufacturing Supervisor</p>
+                    </div>
+                  </div>
+                </div><!-- End testimonial item -->
+    
+            </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section><!-- End Testimonials Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <p class="mb-1">&copy; Copyright MyPortfolio. All Rights Reserved</p>
+          <div class="credits">
+            <!--
+            All the links in the footer should remain intact.
+            You can delete the links only if you purchased the pro version.
+            Licensing information: https://bootstrapmade.com/license/
+            Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=MyPortfolio
+          -->
+            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+          </div>
+        </div>
+        <div class="col-sm-6 social text-md-end">
+          <a href="https://linkedin.com/in/billhuangprofile"><span class="bi bi-linkedin"></span></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
