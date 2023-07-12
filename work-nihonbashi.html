@@ -5,8 +5,8 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>APOPWA Work</title>
-  <meta content="Summary of Atlanta Publicly Owned Property Web App Project" name="description">
+  <title>Nihonbashi Work</title>
+  <meta content="Summary of Nihonbashi Tokyo Smart City Project" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
@@ -75,8 +75,8 @@
       <div class="container">
         <div class="row mb-4 align-items-center">
           <div class="col-md-6" data-aos="fade-up">
-            <h2>Atlanta Publicly Owned Property Web App </h2>
-            <p>TLDR: Created a toolset for the City of Atlanta City Planning Department to use that prioritized what publicly owned properties to develop various typologies of establishments(housing, commercial, etc.) upon</p>
+            <h2>Unsupervised Learning on Trip Typologies in Nihonbashi Tokyo Smart City Effort</h2>
+            <p>TLDR: Cleaned and organized GPS data into trips, utilized hiearchical clustering on the trips, generated objective categories of trips in the neighborhood for Mitsui Fudo-san's future property development of the neighborhood and University of Tokyo city planning in the region</p>
           </div>
         </div>
       </div>
@@ -85,16 +85,17 @@
         <div class="container">
           <div class="row align-items-stretch">
             <div class="col-md-6" data-aos="fade-up">
-              <img src="assets/img/APOPWA1.png" alt="Image" class="img-fluid">
+              <img src="assets/img/nihonbashi-context-map.png" alt="Image" class="img-fluid">
+              <p> Nihonbashi Neighborhood(outlined above) lies at the heart of the Tokyo region and is home to high/medium density commercial and medium density residential properties</p>
             </div>
             <div class="col-md-6 ml-auto" data-aos="fade-up" data-aos-delay="100">
               <div class="sticky-content">
                 <h5 class="h5">Topics</h5>
-                <p class="mb-4"><span class="text-muted">Multi-Criteria Decision Analysis(MCDA), Property Development, Data, ArcGIS Pro, ArcGIS Online, ArcGIS Web App, Excel, Project Definition, City Planning, User Design</span></p>
+                <p class="mb-4"><span class="text-muted">Unsupervised, Machine Learning, Hierarchical Clustering, Smart Cities, GPS Data, High Frequency, Geospatial Analysis, R, Python, Geopandas, sf Package, kepler.gl, Research, Tokyo</span></p>
 
                 <div class="mb-5">
                   <h5 class="h5">Project Motivation</h5>
-                  <p>The intention of this toolset is to help all parties interested in stewarding public-owned properties well. The toolset enables users to have more informed decisions of what public properties would be best preserved, developed, or renovated for the good of Atlanta. These tools were developed to gather data and analyze the publicly-owned land inside the City of Atlanta. As the toolset was originally intended for the use of the Office of Housing and Community Development, the tool tends to display data and enable analysis that is oriented toward said office’s work. However, with the interest of transparency and enabling public residents, this toolset has been redirected for public use as well.</p>
+                  <p>The project was born from a desire to investigate non-traditional structures in how cities operate, in this case the flow of people. Traditionally, top-down categories were defined in travel surveys for types of commutes such as stay-at-home spouse, student, or long distance commuter. These are categories from historical observations and opinions, but what if there was a way to think about people flows from an objective point of view. With access to high-resolution data, this is now possible and was explored throughout this project. The setting for this project application was the Nihonbashi district in Tokyo as Mitsui Fudo-san and University of Tokyo supplied the data through a partnership with Georgia Tech for this Smart City Research</p>
                 </div>
 
               </div>
@@ -105,70 +106,43 @@
       <div class="container">
         <div class="row align-items-stretch">
           <div class="col-md-6">
-            <img src="assets/img/APOPWA1_zoomin.png" alt="Image" class="img-fluid">
-            <p> filter tool pane</p>
+            <img src="assets/img/nihonbashi_gsv.png" alt="Image" class="img-fluid">
+            <p> A typical street in the neighborhood looks like this(Copyright 2023 Google)</p>
           </div>
           <div class="col-md-6">
-            <h5>Built Features</h5>
-            <ul>
-              <li>property development score</li>
-              <li>attribute filtering</li>
-              <li>spatial filtering</li>
-              <li>upload custom layer data</li>
-              <li>property search & exploration</li>
-              <li>export properties after transformations</li>
-            </ul>
             <h5>Project Walkthrough</h5>
-            <p>I built this tool up starting from an excel sheet of parcels. My supervisor was awesome in
-              giving me guidance and feedback through this project though!
-              I used ArcGIS Pro to perform attribute and spatial joins to create the base layers for this
-              map. My knowledge of property development assisted me in selecting relevant variables to analysis
-              the properties through. I then had to find the data for these variables.
-              This part took a long time, I had to go snooping around the organization, partner orgs, and the internet
-              for additional data sources that were not immediately avaliable to me. I used internal data sources
-              for the city parks, federal online sources for the raster slope topoology, and reached out to
-              Atlanta Housing Authority for various tax data. 
+            <p>This project was born through a capstone course Smart City research partnership between Georgia Tech and the University of Tokyo Kashiwanoha Campus CSIS Department in conjunction with Mitsui Fudosan(One of Japan's "Big 3" real estate developers along with Misubishi and Sumitomo).
             </p>
             <p>
-              The meat of my work then came when deciding the methodology to determine which properties were fit
-              for certain development types. I researched MCDA and debated using multiple methods like AHP and
-              TOPSIS. However, I decided to go with the simplest which is closest to a weighted summation 
-              because City of Atlanta(CoA) staff was not able to support that level of ongoing detailed analysis
-              at that time. All of the data source variables were fed into ArcGIS Pro and Python was used to
-              automate the algorithm in ArcGIS to score and rank each parcel based upon its suitability for
-              certain types of development(multi-use residential, park, affordable housing, etc.).
-            </p>
-            <p>
-              While I had generated these results, there was no easy way to explore and view them. From there,
-              I created an outward facing ArcGIS Webapp which includes the funcationalities mentioned above
-              and more! An example of the filtering capability is shown to the left where a user can specify
-              the size of property they want to look at. You can see the result before and after below amongst
-              other example funcationalities of the tool!
+              The data sources we had to work with included GPS data from cell devices, the government's property parcel map, a Japanese Travel Survey for the Tokyo Area, and Japanese Census ChoChoMoku Data(CCM).
             </p>
           </div>
         </div>
         <div class="row align-items-stretch">
           <div class="col-md-6">
             <p>&nbsp</p>
-            <h6>Before Size Filter</h6>
-            <img src="assets/img/APOPWA1.png"
+            <h6>Datasets used for Project</h6>
+            <img src="assets/img/nihonbashi-datasets.png"
                   width="1000">
             <p>&nbsp</p>
-            <h6>After Size Filter (Display Properties Lower than 3 acres)</h6>
-            <img src="assets/img/APOPWA2.png"
+            <h6>The methodology followed is shown below and follow three main steps of cleaning the data, applying the Unsupervised learning algorithm, and visualizing and interpreting the results</h6>
+            <img src="assets/img/nihonbashi-flow-chart.png"
                   width="1000">
             <p>&nbsp</p>
-            <h6>School Dist. Filter Pane</h6>
-            <img src="assets/img/APOPWA3.png" width="500">
+            <h6>Cleaning the data included using R sf package and python geopandas to connect individual data points into trips, combining data from different sources, and geospatial processing to summarize useful geospatial features for each trip. We ended up generating many features to cluster upon, but a few are shown here. </h6>
+            <img src="assets/img/Nihonbashi-features.png" width="500">
             <p>&nbsp</p>
-            <h6>After School Dist. Filter</h6>
-            <img src="assets/img/APOPWA4.png" width="1000">
+            <h6>Some prelimary results after cleaning included using kepler.gl to visualize our cleaned data. Here, you can already see some interesting things like activity patterns of an individual and what types of activities people do in various parts of the district.</h6>
+            <img src="assets/img/nihonbashi-officetime.png" width="1000">
             <p>&nbsp</p>
-            <h6>Property Exploration</h6>
-            <img src="assets/img/APOPWA7.png" width="1000">
+            <h6>Here are a couple of trips for detailed schedule observation</h6>
+            <img src="assets/img/nihonbashi-individual.png" width="1000">
             <p>&nbsp</p>
-            <h6>Details avaliable for more details</h6>
-            <img src="assets/img/APOPWA6.png" width="1000">
+            <h6>Unsupervised Learning was chosen for exploring the objective structure of the human flow data. Below is a dendrogram using Ward's Linkage to Hiearchically Cluster on 10 classes. Each Class is labeled and boxed in a color in the dendrogram below.</h6>
+            <img src="assets/img/nihonbashi-dendrograhm.png" width="1000">
+            <p>&nbsp</p>
+            <h6>This research is still in progress at this time of writing, so the results aren't avaliable quite yet, but here are some hopes. Ideally the outputted clusters would result in something observable like the below that could essentially provide market segmentation for future development and planning</h6>
+            <img src="assets/img/nihonbashi-theor-output.png" width="1000">
           </div>
         </div>
         
@@ -205,7 +179,7 @@
                     </div>
                   </div>
                 </div><!-- End testimonial item -->
-
+                
                 <div class="swiper-slide">
                   <div class="testimonial-wrap">
                     <div class="testimonial">

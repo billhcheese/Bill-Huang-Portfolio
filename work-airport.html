@@ -5,8 +5,8 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>APOPWA Work</title>
-  <meta content="Summary of Atlanta Publicly Owned Property Web App Project" name="description">
+  <title>Aerotropolis Land Use Work</title>
+  <meta content="Summary of Aerotropolis Atlanta Land Use Project" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
@@ -75,8 +75,8 @@
       <div class="container">
         <div class="row mb-4 align-items-center">
           <div class="col-md-6" data-aos="fade-up">
-            <h2>Atlanta Publicly Owned Property Web App </h2>
-            <p>TLDR: Created a toolset for the City of Atlanta City Planning Department to use that prioritized what publicly owned properties to develop various typologies of establishments(housing, commercial, etc.) upon</p>
+            <h2>Aerotropolis Airport Supervised Learning </h2>
+            <p>TLDR: Aerotropolis Airport Alliance wants to create a new city development near the Atlanta airport to increase visitor traffic, economic activity, and labor housing near the Atlanta Airport. I collected data on how other developments in Atlanta have designed their land use distributions for training data and utilized multiple linear regression along with optimization to propose a land use layout for this new airport development.</p>
           </div>
         </div>
       </div>
@@ -85,16 +85,17 @@
         <div class="container">
           <div class="row align-items-stretch">
             <div class="col-md-6" data-aos="fade-up">
-              <img src="assets/img/APOPWA1.png" alt="Image" class="img-fluid">
+              <img src="assets/img/airport-context.png" alt="Image" class="img-fluid">
+              <p> The circled region shows the airport's location. Much of the activity socially and economically happens in the north half ot Atlanta along transit corridors. The airport is a massive property but isolated to the south of Atlanta where there is comparatively little economic activity. Warehouses and low socioeconomic status housing is predominent in the airport's surroudning area.</p>
             </div>
             <div class="col-md-6 ml-auto" data-aos="fade-up" data-aos-delay="100">
               <div class="sticky-content">
                 <h5 class="h5">Topics</h5>
-                <p class="mb-4"><span class="text-muted">Multi-Criteria Decision Analysis(MCDA), Property Development, Data, ArcGIS Pro, ArcGIS Online, ArcGIS Web App, Excel, Project Definition, City Planning, User Design</span></p>
+                <p class="mb-4"><span class="text-muted">Supervised, Machine Learning, Regression, Optimization, Smart Cities, Geospatial Analysis, Python, sklearn, Land Use, City Planning, Airport</span></p>
 
                 <div class="mb-5">
                   <h5 class="h5">Project Motivation</h5>
-                  <p>The intention of this toolset is to help all parties interested in stewarding public-owned properties well. The toolset enables users to have more informed decisions of what public properties would be best preserved, developed, or renovated for the good of Atlanta. These tools were developed to gather data and analyze the publicly-owned land inside the City of Atlanta. As the toolset was originally intended for the use of the Office of Housing and Community Development, the tool tends to display data and enable analysis that is oriented toward said office’s work. However, with the interest of transparency and enabling public residents, this toolset has been redirected for public use as well.</p>
+                  <p>The Atlanta airport had historically been the busiest airport in the world by traffic seeing 75 million travelers in 2021. The airport is massive and is essentially a city to itself. The Aerotropolis is an alliance of organizations and companies that are invested in the airport region. They wanted to see the airport area more integrated into the fabric of Metro Atlanta so that more economic and person diffusion could occur between the city and the airport travelers. To further this effort, they wanted to explore created a new development close to the airport to essentially act as a bridge and community center for the airport and the Atlanta neighborhoods around it. The idea was to use novel machine learning techniques to help the design of this new city development. This project was presented to the Aerotropolis at the end of the term.</p>
                 </div>
 
               </div>
@@ -105,73 +106,49 @@
       <div class="container">
         <div class="row align-items-stretch">
           <div class="col-md-6">
-            <img src="assets/img/APOPWA1_zoomin.png" alt="Image" class="img-fluid">
-            <p> filter tool pane</p>
+            <img src="assets/img/airport-site.png" alt="Image" class="img-fluid">
+            <p> The specific site proposed for development is on the north end of the airport's property cluster where delta has certain buildings and shares it with the cities of Hapeville and College Park</p>
           </div>
           <div class="col-md-6">
-            <h5>Built Features</h5>
-            <ul>
-              <li>property development score</li>
-              <li>attribute filtering</li>
-              <li>spatial filtering</li>
-              <li>upload custom layer data</li>
-              <li>property search & exploration</li>
-              <li>export properties after transformations</li>
-            </ul>
             <h5>Project Walkthrough</h5>
-            <p>I built this tool up starting from an excel sheet of parcels. My supervisor was awesome in
-              giving me guidance and feedback through this project though!
-              I used ArcGIS Pro to perform attribute and spatial joins to create the base layers for this
-              map. My knowledge of property development assisted me in selecting relevant variables to analysis
-              the properties through. I then had to find the data for these variables.
-              This part took a long time, I had to go snooping around the organization, partner orgs, and the internet
-              for additional data sources that were not immediately avaliable to me. I used internal data sources
-              for the city parks, federal online sources for the raster slope topoology, and reached out to
-              Atlanta Housing Authority for various tax data. 
+            <p>The project idea was to train an algorithm on how other successful developments in the Atlanta area have designed their land use for their populations within the local property development context of developing in Atlanta's property develop rules and environment. The methodology decided on took the form this flow chart shown below.
             </p>
             <p>
-              The meat of my work then came when deciding the methodology to determine which properties were fit
-              for certain development types. I researched MCDA and debated using multiple methods like AHP and
-              TOPSIS. However, I decided to go with the simplest which is closest to a weighted summation 
-              because City of Atlanta(CoA) staff was not able to support that level of ongoing detailed analysis
-              at that time. All of the data source variables were fed into ArcGIS Pro and Python was used to
-              automate the algorithm in ArcGIS to score and rank each parcel based upon its suitability for
-              certain types of development(multi-use residential, park, affordable housing, etc.).
-            </p>
-            <p>
-              While I had generated these results, there was no easy way to explore and view them. From there,
-              I created an outward facing ArcGIS Webapp which includes the funcationalities mentioned above
-              and more! An example of the filtering capability is shown to the left where a user can specify
-              the size of property they want to look at. You can see the result before and after below amongst
-              other example funcationalities of the tool!
+              The first step was rather pain staking as some of the data was collected manually due to there not being much organized pre-existing public data on these popular developments. A multibariate regression was chosen due to its relative ease of understanding the feature's effects on the land use category proportion. Finally, the regression would output proportions that do not add up to 1, so an optimization model was then used to make sure the proportions made sense in addition to adding on additional contraints for a realistic land use output.
             </p>
           </div>
         </div>
         <div class="row align-items-stretch">
           <div class="col-md-6">
             <p>&nbsp</p>
-            <h6>Before Size Filter</h6>
-            <img src="assets/img/APOPWA1.png"
+            <img src="assets/img/airport-method.png"
                   width="1000">
             <p>&nbsp</p>
-            <h6>After Size Filter (Display Properties Lower than 3 acres)</h6>
-            <img src="assets/img/APOPWA2.png"
+            <h6>The response data collected and used to train this supervised model is shown below</h6>
+            <img src="assets/img/airport-responsedata.png"
                   width="1000">
             <p>&nbsp</p>
-            <h6>School Dist. Filter Pane</h6>
-            <img src="assets/img/APOPWA3.png" width="500">
+            <h6>There were 7 independent variables used for this model. The variables chosen weren't put through a robust process as this project was more a proof of concept than making sure the output was of reliable quality. The output variables for this model to decide were the most common types of land uses in the Atlanta Metro region which ended up being 7 as well due to making sure the balance between the number of independent and dependent variables was reasonable.</h6>
+            <img src="assets/img/airport-variables.png" width="500">
             <p>&nbsp</p>
-            <h6>After School Dist. Filter</h6>
-            <img src="assets/img/APOPWA4.png" width="1000">
+            <h6>The regression model was built using sklearn packages and pandas in Python. It had the following resultsI then fed in the airport development's local independent variables to the model to get an initial output that would be fed into the optimization model to make it useful.</h6>
+            <img src="assets/img/airport-regre-output.png" width="1000">
             <p>&nbsp</p>
-            <h6>Property Exploration</h6>
-            <img src="assets/img/APOPWA7.png" width="1000">
+            <h6>The optimization was also done in Python using the PuLP package. There were two different objective functions optimized. The first one/equation shown just makes sure the output percentages were interpretable. The second objective function/equation shows a pentalty term that makes it so that the large the land use variation from the current land use, the less likely the optimization will be to select it which models real life as trying for radical change produces more opposition than subtle change in city planning. </h6>
+            <img src="assets/img/airport-opt-eq.png" width="1000">
             <p>&nbsp</p>
-            <h6>Details avaliable for more details</h6>
-            <img src="assets/img/APOPWA6.png" width="1000">
+            <h6>The land use proportion recommendation for the new site development by the airpot is shown below. It shows 5 different suggestions with different common conditions a development. No institutional means if there is no anchor institution in the development. No industrial means if there is no industrial zoning. Regre. scaling is if you skip the optimizatio model and just use the regression output. Penalty is if you add a pentalty term to account for opposition if zoning changes too much.</h6>
+            <img src="assets/img/airport-output-different-sc.png" width="1000">
+            <p>&nbsp</p>
+            <h6>These numbers proportions are just a guideline on how city planners might design this space. City planners would still have to choose which exact parcels to fill these quota land use numbers. A different ML approach would have to be employed for a decision on every parcel. An example of which land uses are selected for which parcels in the development site could be as follows.</h6>
+            <img src="assets/img/airport-example-use.png" width="1000">
           </div>
         </div>
-        
+
+        <h5><br><br><br>feel free to read the final project report here for more details</h1>
+        <object data="assets/docs/Final_Report_bill_part.pdf" type="application/pdf" width="100%" height="1000px">
+          <p>Unable to display PDF file. <a href="assets/docs/Final_Report_bill_part.pdf">Download</a> instead.</p>
+        </object>
       </div>
     </section>
 
@@ -205,7 +182,7 @@
                     </div>
                   </div>
                 </div><!-- End testimonial item -->
-
+                
                 <div class="swiper-slide">
                   <div class="testimonial-wrap">
                     <div class="testimonial">

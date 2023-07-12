@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Ethnic Restaurants in Atlanta Geospatial Analysis Work</title>
+  <meta content="Summary of Ethnic Restaurant Locations in Atlanta Analysis Project" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=https://fonts.googleapis.com/css?family=Inconsolata:400,500,600,700|Raleway:400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: MyPortfolio - v4.4.0
+  * Template URL: https://bootstrapmade.com/myportfolio-bootstrap-portfolio-website-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Navbar ======= -->
+  <div class="collapse navbar-collapse custom-navmenu" id="main-navbar">
+    <div class="container py-2 py-md-5">
+      <div class="row align-items-start">
+        <div class="col-md-2">
+          <ul class="custom-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li class="active"><a href="works.html">Works</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-6 d-none d-md-block  mr-auto">
+            <p>Welcome to my page! I've spent some time documenting my work, my interests, and random things about myself here. I hope you find what your looking for. Please do look around!</p>
+        </div>
+        <div class="col-md-4 d-none d-md-block">
+            <h3>Work With Me</h3>
+            <p><a href="#">billhuang@gatech.edu</a></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <nav class="navbar navbar-light custom-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Bill's Portfolio.</a>
+      <a href="#" class="burger" data-bs-toggle="collapse" data-bs-target="#main-navbar">
+        <span></span>
+      </a>
+    </div>
+  </nav>
+
+  <main id="main">
+
+    <section class="section">
+      <div class="container">
+        <div class="row mb-4 align-items-center">
+          <div class="col-md-6" data-aos="fade-up">
+            <h2>Ethnic Restaurant Population Analysis </h2>
+            <p>TLDR: Census and Yelp API data were used along with geospatial analysis techniques in ArcGIS Pro to determine statistical relationships between ethnic restaurant locations and immigrant population prescence in the Atlanta Metro</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="site-section pb-0">
+        <div class="container">
+          <div class="row align-items-stretch">
+            <div class="col-md-6" data-aos="fade-up">
+              <img src="assets/img/ethnic-res-detail.png" alt="Image" class="img-fluid">
+              <p> A staple immigrant grocery store along the Buford Highway Corridor that I went to growing up with my mom and sister</p>
+            </div>
+            <div class="col-md-6 ml-auto" data-aos="fade-up" data-aos-delay="100">
+              <div class="sticky-content">
+                <h5 class="h5">Topics</h5>
+                <p class="mb-4"><span class="text-muted">Geospatial Analysis, ArcGIS Pro, Socioeconomic GIS, Spatial Autocorrelation, OLS Regression, Hot Spot Analysis, Yelp API, US Census, Immigrant, Restaurants</span></p>
+
+                <div class="mb-5">
+                  <h5 class="h5">Project Motivation</h5>
+                  <p>Ethnic restaurants appear in many areas of the Atlanta Metro Area. These ethnic restaurants
+                    play a part in Atlanta being nationally recognized as a city with great food options. Atlanta also,
+                    coincidentally (or not), has a sizable immigrant population from many countries. Often, immigrants in
+                    America make a living and share their birth nation culture through starting restaurants that serve the
+                    foods of their origin nation. Additionally, immigrant populations in America may tend to frequent and
+                    generate demand for food from their origin nation in their new locale. A theory that this project explores
+                    is that there is a relationship between the physical prescence of immigrant populations and ethnic
+                    restaurants in Atlanta. In the future, it would be interesting to think about how investing in immigrants
+                    could stimulate ethnic restaurant economic and cultural activity in a region. This project looks to answer
+                    three questions. 1. Where are ethnic restaurants located in Atlanta? 2. Where are immigrant populations
+                    residing in Atlanta? 3. Is a statistically significant relationship between the population of ethnic
+                    restaurants and immigrant population residences in Atlanta? The datasets are shown below</p>
+                </div>
+
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      <div class="container">
+        <div class="row align-items-stretch">
+          <div class="col-md-6">
+            <img src="assets/img/ethnic-res-data1.png" alt="Image" class="img-fluid">
+            <p> US Census data was pulled for foreign-born populations as shown</p>
+          </div>
+          <div class="col-md-6">
+            <img src="assets/img/ethnic-res-data2.png" alt="Image" class="img-fluid">
+            <p> The Yelp Fusion API was used to pull all restaurant POIs with ethnic tags</p>
+          </div>
+          <div class="col-md-6">
+            <h5>Project Walkthrough</h5>
+            <p>A multitude of analysis techniques were used to answer the project questions. The first question
+              is “Where are ethnic restaurants located in the Atlanta area?” It would be helpful to know which areas of
+              Atlanta have large clusters of ethnics restaurants to answer this question. Therefore, a hotspot analysis
+              using Getis-Ord Gi* is conducted on the ethnic restaurant population by census tract. Inverse distance
+              squared in Euclidean space was chosen for the conceptualization of spatial relationships as a mix
+              between local and regional analysis is desired for the three included countries of the dataset. To answer the second question “Where are immigrant populations residing in the Atlanta area?”,
+              the same analysis method of a hotspot analysis using Getis-Ord Gi* was used except with the ForeignBorn Population dataset from the ACS 2021 5-Year on census tracts. Additionally, to answer these two
+              questions, it would be revealing to see where the mean center of the ethnic restaurants are compared to
+              the mean center of Foreign-Born residents. Both the mean center of the ethnic restaurant points and the
+              mean center of census tracts weighted by Foreign-Born residents were calculated along with their first
+              standard deviation distribution ellipses.
+            </p>
+          </div>
+          <div class="col-md-6">
+            <img src="assets/img/ethnic-res-result1.png" alt="Image" class="img-fluid">
+            <p> </p>
+          </div>
+          <div class="col-md-6">
+            <p>
+              While the hotspot analysis sheds some light on the clustering of immigrants and ethnic
+              restaurants, exploring the spatial autocorrelation of immigrants and ethnic restaurants also reveals if
+              immigrant residences tend to cluster with themselves. A spatial autocorrelation analysis using Moran’s I
+              was performed for immigrant populations and ethnic restaurant populations.
+              
+            </p>
+          </div>
+          <div class="col-md-6">
+            <img src="assets/img/ethnic-res-result2.png" alt="Image" class="img-fluid">
+            <p> </p>
+          </div>
+          <div class="col-md-6">
+            <p>
+              To answer the third question “Is a statistically significant relationship between the population of ethnic restaurants and immigrant population residences in the Atlanta Area?”, an OLS regression analysis is performed. A general OLS regression is performed on census tract geometries with the dependent variable being the population of ethnic restaurants and the explanatory variable being the population of Foreign-Born residents. Having more statistically significant explanatory variables beyond just foreign-born residents would make the regression model more trustworthy for analysis. Since this project is not concerned with the other possible explanatory variables, they are omitted from the model. A more in-depth regression using different ethnic groups of foreign-born residents as explanatory variables is also performed to see if any particular ethnic group has larger influence on the population of ethnic restaurants. The included ethnic groups were European, Asian, African, Oceania, Americas(excluding the US).
+              
+            </p>
+          </div>
+          <div class="col-md-6">
+            <img src="assets/img/ethnic-res-result3.png" alt="Image" class="img-fluid">
+            <p> </p>
+          </div>
+        </div>
+        <div class="row align-items-stretch">
+          <div class="col-md-8">
+            <p>&nbsp</p>
+            <h5>Conclusion</h5>
+            <p>
+              This project set out to answer questions on the locations and distribution of ethnic restaurants in the Atlanta area, the locations and distributions of foreign-born populations in the Atlanta area, and the existence of a statistically significant relationship between foreign-born populations and ethnic restaurant populations within census tracts of the Atlanta area. Using spatial autocorrelation, hotspot, and regression methods, the questions have been answered. Generally, the foreign-born populations reside in the northeast of Atlanta. The ethnic restaurants also follow that same locational trend except with a larger presence in the center of Atlanta as well. There does exist a statistically significant relationship between foreign-born populations and ethnic restaurant populations in the Atlanta area, but foreign-born populations are poor predictors of the number of ethnic restaurants in tract resolution locales in the Atlanta area. These findings using socioeconomic GIS methods are confirmed by experiential and qualitative finding of the prescence of foreign-born populations and ethnic restaurants in the Atlanta area as well. The findings are useful to understand the restaurant and diversity spatial layout of the Atlanta area. Such analysis could be applied to other city regions to gain an understanding of the restaurant and diversity layouts. Additionally, the report finding put more credence towards a theory that immigrants do generate more ethnic restaurants for a region. Such restaurant generation can help not only share diverse food cultures to a city, but also generate economic activity and cultural hotspots. The hotspot analysis does show that, in the Atlanta area, that clusters of these restaurants and immigrant populations do exist. When these hotspots are combined with agglomerative theories, such analysis could also inform planning parameters around immigrant residence populations and restaurants for locales in cities. 
+            </p>
+          </div>
+        </div>
+        <h5><br><br><br>to get a deeper dive on the results analysis or other details of the project the final project report is included here</h1>
+        <object data="assets/docs/SEGIS_FinalProject.pdf" type="application/pdf" width="100%" height="1000px">
+          <p>Unable to display PDF file. <a href="assets/docs/SEGIS_FinalProject.pdf">Download</a> instead.</p>
+        </object>
+      </div>
+    </section>
+
+    <!-- ======= Testimonials Section ======= -->
+    <section class="section pt-0">
+      <div class="container">
+
+        <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                  <div class="testimonial-wrap">
+                    <div class="testimonial">
+                      <img src="assets/img/person_1.jpg" alt="Image" class="img-fluid">
+                      <blockquote>
+                        <p>I wanted to thank you... for your leadership and dedication to this project... You really shaped this project and implemented a vision for it... I really trusted your work. You elevated this project beyond what would have been possible had we not had you on board.</p>
+                      </blockquote>
+                      <p>&mdash; City of Atlanta Department of City Planning Supervisor</p>
+                    </div>
+                  </div>
+                </div><!-- End testimonial item -->
+    
+                <div class="swiper-slide">
+                  <div class="testimonial-wrap">
+                    <div class="testimonial">
+                      <img src="assets/img/person_2.jpg" alt="Image" class="img-fluid">
+                      <blockquote>
+                        <p>You did a great job... from coming up to speed quickly on how to best work with our team to completing all tasks efficiently and with a high quality of work. For every task given, especially larger ones, you were good at taking ownership of the project with minimal direction needed.</p>
+                      </blockquote>
+                      <p>&mdash; East West Manufacturing Supervisor</p>
+                    </div>
+                  </div>
+                </div><!-- End testimonial item -->
+                
+                <div class="swiper-slide">
+                  <div class="testimonial-wrap">
+                    <div class="testimonial">
+                      <img src="assets/img/person_3.jpg" alt="Image" class="img-fluid">
+                      <blockquote>
+                        <p>I am very pleased with your performance, team spirit, self-starter mentality, and leadership. I am very pleased... with your ability to move a project from concept to reality... you have helped get us... strong infrastructure, technical capability, programming</p>
+                      </blockquote>
+                      <p>&mdash; Center for Sustainable Communities Supervisor</p>
+                    </div>
+                  </div>
+                </div><!-- End testimonial item -->
+    
+    
+            </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section><!-- End Testimonials Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <p class="mb-1">&copy; Copyright MyPortfolio. All Rights Reserved</p>
+          <div class="credits">
+            <!--
+            All the links in the footer should remain intact.
+            You can delete the links only if you purchased the pro version.
+            Licensing information: https://bootstrapmade.com/license/
+            Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=MyPortfolio
+          -->
+            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+          </div>
+        </div>
+        <div class="col-sm-6 social text-md-end">
+          <a href="https://linkedin.com/in/billhuangprofile"><span class="bi bi-linkedin"></span></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
