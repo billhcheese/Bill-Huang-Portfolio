@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>CoA OHCD Data Management System</title>
+  <meta content="Summary of Aerotropolis Atlanta Land Use Project" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=https://fonts.googleapis.com/css?family=Inconsolata:400,500,600,700|Raleway:400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: MyPortfolio - v4.4.0
+  * Template URL: https://bootstrapmade.com/myportfolio-bootstrap-portfolio-website-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Navbar ======= -->
+  <div class="collapse navbar-collapse custom-navmenu" id="main-navbar">
+    <div class="container py-2 py-md-5">
+      <div class="row align-items-start">
+        <div class="col-md-2">
+          <ul class="custom-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-6 d-none d-md-block  mr-auto">
+            <p>Welcome to my page! I've spent some time documenting my work, my interests, and random things about myself here. I hope you find what your looking for. Please do look around!</p>
+        </div>
+        <div class="col-md-4 d-none d-md-block">
+            <h3>Work With Me</h3>
+            <p><a href="#">billhuang@gatech.edu</a></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <nav class="navbar navbar-light custom-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Bill's Portfolio.</a>
+      <a href="#" class="burger" data-bs-toggle="collapse" data-bs-target="#main-navbar">
+        <span></span>
+      </a>
+    </div>
+  </nav>
+
+  <main id="main">
+
+    <section class="section">
+      <div class="container">
+        <div class="row mb-4 align-items-center">
+          <div class="col-md-6" data-aos="fade-up">
+            <h2>City of Atlanta Office of Housing and Community Development Data Management</h2>
+            <p>TLDR: The City of Atlanta did not have a good solution for storing and allowing edits to their housing program records. Using ArcGIS Online, I proposed a better method for storage and revision.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="site-section pb-0">
+        <div class="container">
+          <div class="row align-items-stretch">
+            <div class="col-md-6 ml-auto" data-aos="fade-up" data-aos-delay="100">
+              <div class="sticky-content">
+                <h5 class="h5">Topics</h5>
+                <p class="mb-4"><span class="text-muted">Data Management, Housing Data, AGOL, Airtable, Excel, Integrations</span></p>
+
+                <div class="mb-5">
+                  <h5 class="h5">Project Motivation</h5>
+                  <p>The Office of Housing and Community Development within the City of Atlanta Department of City Planning was having difficultly tracking housing program data and development progress. The starting state of the data storage was essentially many different versions of online spreadsheets and GIS layers. They were started to have issues not being able to let many people make edits in a short period of time, errors inputting data, versions falling out of sync, and not being able to share the information in a timely manner with stakeholders in an appropriate format. I hopped into this project, because it really bothered me that these issues kept happening and there was not a solution on the horizon. Below shows an example of the various different platforms and information transfers that had to be made between ESRI platforms and Microsoft, Airtable, and Softr platforms in the existing way they operated. The ideal solution for this would be to implement a legitimate database system, but the office did not have the resources nor the staff expertise to properly run, maintain, and access such technologies. So, I proposed a quasi-database system of sorts on AGOL where our data storage units would be AGOL Layers.</p>
+                </div>
+
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      <div class="container">
+        <div class="row align-items-stretch">
+          <div class="col-md-8">
+            <p>&nbsp</p>
+            <img src="assets/img/database-propose.png"
+                  width="1000">
+            <p>&nbsp</p>
+            <h6>The proposed system I designed for a next step to impliment keeping in mind the technology limitations of the office staff was as follows.</h6>
+            <img src="assets/img/database-ideal.png"
+                  width="1000">
+            <p>&nbsp</p>
+            <h6>This was designed three big points in mind. 1. Redudant Data should be eliminated. Redudant data causes many issues such as slowing down sync times, increasing storage cost, increasing data accuracy errors, and increasing time spend manually updating any data. 2. Large data sizes due to redudant data means slower data processing for any data search or operation. 3. When batch updating, there are longer down times and higher risks of compromising the datasets. So this new data storage and flow system create more production and editing layers essentially while reducing the number of platforms store the same information on. The new edits include 1.Everything gets moved to ESRI platforms 2. Separate data layers exist for record storage and production output products. 3. Separate property development data from public property databases as there is not a innate relationship between the two.</h6>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Testimonials Section ======= -->
+    <section class="section pt-0">
+      <div class="container">
+
+        <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                  <div class="testimonial-wrap">
+                    <div class="testimonial">
+                      <img src="assets/img/person_1.jpg" alt="Image" class="img-fluid">
+                      <blockquote>
+                        <p>I wanted to thank you... for your leadership and dedication to this project... You really shaped this project and implemented a vision for it... I really trusted your work. You elevated this project beyond what would have been possible had we not had you on board.</p>
+                      </blockquote>
+                      <p>&mdash; City of Atlanta Department of City Planning Supervisor</p>
+                    </div>
+                  </div>
+                </div><!-- End testimonial item -->
+    
+                <div class="swiper-slide">
+                  <div class="testimonial-wrap">
+                    <div class="testimonial">
+                      <img src="assets/img/person_2.jpg" alt="Image" class="img-fluid">
+                      <blockquote>
+                        <p>You did a great job... from coming up to speed quickly on how to best work with our team to completing all tasks efficiently and with a high quality of work. For every task given, especially larger ones, you were good at taking ownership of the project with minimal direction needed.</p>
+                      </blockquote>
+                      <p>&mdash; East West Manufacturing Supervisor</p>
+                    </div>
+                  </div>
+                </div><!-- End testimonial item -->
+                
+                <div class="swiper-slide">
+                  <div class="testimonial-wrap">
+                    <div class="testimonial">
+                      <img src="assets/img/person_3.jpg" alt="Image" class="img-fluid">
+                      <blockquote>
+                        <p>I am very pleased with your performance, team spirit, self-starter mentality, and leadership. I am very pleased... with your ability to move a project from concept to reality... you have helped get us... strong infrastructure, technical capability, programming</p>
+                      </blockquote>
+                      <p>&mdash; Center for Sustainable Communities Supervisor</p>
+                    </div>
+                  </div>
+                </div><!-- End testimonial item -->
+    
+    
+            </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section><!-- End Testimonials Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <p class="mb-1">&copy; Copyright MyPortfolio. All Rights Reserved</p>
+          <div class="credits">
+            <!--
+            All the links in the footer should remain intact.
+            You can delete the links only if you purchased the pro version.
+            Licensing information: https://bootstrapmade.com/license/
+            Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=MyPortfolio
+          -->
+            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+          </div>
+        </div>
+        <div class="col-sm-6 social text-md-end">
+          <a href="https://linkedin.com/in/billhuangprofile"><span class="bi bi-linkedin"></span></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
