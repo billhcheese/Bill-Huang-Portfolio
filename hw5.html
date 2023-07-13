@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HW5</title>
+    <link rel="stylesheet" href="./hw5.css">
+</head>
+<body>
+    <div id="main">
+        <h1>Food Nutrients Dashboard</h1>
+        <p>This drop down selection changes the y axis of the scatter plot </p>
+        <select class="custom-select" id="categorySelect" onchange="onCategoryChanged()">
+            <option selected value='+d.Protein'>Protein</option>
+            <option value="+d.Tot_Lipid">Total Lipids</option>
+            <option value="+d.Carbohydrt">Carbs</option>
+            <option value="+d.Fiber_TD">Fiber</option>
+            <option value="+d.Calcium">Calcium</option>
+            
+            </select>
+    </div>
+    
+
+</body>
+<script src="https://d3js.org/d3.v6.min.js"></script>
+<script src="./hw5.js"></script>
+</html>

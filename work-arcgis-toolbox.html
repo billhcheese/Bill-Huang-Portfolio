@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Restaurant ArcGIS Toolbox</title>
+  <meta content="Summary of Restaurant ArcGIS Pro Toolbox Project" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=https://fonts.googleapis.com/css?family=Inconsolata:400,500,600,700|Raleway:400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: MyPortfolio - v4.4.0
+  * Template URL: https://bootstrapmade.com/myportfolio-bootstrap-portfolio-website-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Navbar ======= -->
+  <div class="collapse navbar-collapse custom-navmenu" id="main-navbar">
+    <div class="container py-2 py-md-5">
+      <div class="row align-items-start">
+        <div class="col-md-2">
+          <ul class="custom-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li class="active"><a href="works.html">Works</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-6 d-none d-md-block  mr-auto">
+            <p>Welcome to my page! I've spent some time documenting my work, my interests, and random things about myself here. I hope you find what your looking for. Please do look around!</p>
+        </div>
+        <div class="col-md-4 d-none d-md-block">
+            <h3>Work With Me</h3>
+            <p><a href="#">billhuang@gatech.edu</a></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <nav class="navbar navbar-light custom-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Bill's Portfolio.</a>
+      <a href="#" class="burger" data-bs-toggle="collapse" data-bs-target="#main-navbar">
+        <span></span>
+      </a>
+    </div>
+  </nav>
+
+  <main id="main">
+
+    <section class="section">
+      <div class="container">
+        <div class="row mb-4 align-items-center">
+          <div class="col-md-6" data-aos="fade-up">
+            <h2>ArcGIS Pro Restaurant Toolbox </h2>
+            <p>TLDR: Created a toolbox in ArcGIS Pro using python arcpy package to display restaurant POI data filtering for type of restaurant and coloring by a relavent Yelp field like restaurant rating</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="site-section pb-0">
+        <div class="container">
+          <div class="row align-items-stretch">
+            <div class="col-md-6" data-aos="fade-up">
+              <img src="assets/img/toolbox-data.png" alt="Image" class="img-fluid">
+              <p> The data scraped from the Yelp API included the following restaurant POIs in addition to their yelp fields like restaurant rating or popularity</p>
+            </div>
+            <div class="col-md-6 ml-auto" data-aos="fade-up" data-aos-delay="100">
+              <div class="sticky-content">
+                <h5 class="h5">Topics</h5>
+                <p class="mb-4"><span class="text-muted">ArcGIS Pro, ArcPy, Toolbox, Spatial Data, Macro</span></p>
+
+                <div class="mb-5">
+                  <h5 class="h5">Project Motivation</h5>
+                  <p>The project focus is to create a tool to help people understand where food establishments of various cultures are in Atlanta and to what degree they are present in various areas of Metro Atlanta. 
+                    Food is often central to many cultures. Atlanta is place where people from many different ethnicities end up. Food is also a shared experience in many cultures and provides a great means of exploring the culture of other peoples. This project would help to analyze where different cultures are tangible to experience in Atlanta through restaurants of each culture. Mapping out a restaurant category of interest could display where people from that culture tend to reside in Atlanta as well as where people can go to experience different cultures in our own city of Atlanta. I hope to learn where different types of restaurants tend to locate in Atlanta, which areas of Atlanta might be in a food culture deficit and which areas show strong concentrations of food culture. In the project an ArcGIS Pro Toolbox was made, so that everyone using this tool could select a specific culture of food to analyze the city through.
+                    </p>
+                </div>
+
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      <div class="container">
+        <div class="row align-items-stretch">
+          <div class="col-md-6">
+            <img src="assets/img/toolbox-load.png" alt="Image" class="img-fluid">
+            <p> Loading the coded toolbox looks like this</p>
+          </div>
+          <div class="col-md-6">
+            <h5>Project Walkthrough</h5>
+            <p>The process that is needed to pick out a specific type of food category from all of the original data points is a query of some sort. ArcGIS provides such query functionality through integration with SQL processes.
+            </p>
+            
+          </div>
+        </div>
+        <div class="row align-items-stretch">
+          <div class="col-md-8">
+            <p>&nbsp</p>
+            <img src="assets/img/toolbox-use0.png"
+                  width="400">
+            <h6>After giving the toolbox a shapefile with restaurant locations, you can choose what type of food restaurant you are interested in looking at</h6>
+            <p>&nbsp</p>
+            <img src="assets/img/toolbox-use1.png"
+                  width="400">
+            <p>&nbsp</p>
+            <h6>This example shows where the African Restaurants are in Atlanta, and it shows how popular they are. The takeaways from the map will vary for every map generated, but, for this example, it shows that African Restaurants are somewhat evenly distributed across all the Counties overlapping the City of Atlanta boundaries. There might be less African restaurants in the Westside and Northside of Fulton County though. It also seems that there’s a concentration of African restaurants in Decatur for some reason. These concentrations of lack of thereof could indicate other things about the prescence of African culture in Decatur and/or the West and Northside of Fulton. Looking at the graduated coloration of the restaurant points, it seems like the most popular restaurants are located closer to the center of Atlanta despite there being a large concentration of African restaurants in Decatur. </h6>
+            <img src="assets/img/toolbox-output1.png" width="500">
+            <p>&nbsp</p>
+          </div>
+        </div>
+
+        <h5><br><br><br>feel free to read the final project report here for more details</h1>
+        <object data="assets/docs/Final_Report_arcgis_toolbox.pdf" type="application/pdf" width="100%" height="1000px">
+          <p>Unable to display PDF file. <a href="assets/docs/Final_Report_arcgis_toolbox.pdf">Download</a> instead.</p>
+        </object>
+
+        <h5><br><br><br>code for the toolbox is provided here</h1>
+        <pre>
+          <code>
+#import arcpy package
+import arcpy
+
+#define toolbox
+class Toolbox(object):
+    def __init__(self):
+        self.label =  "Restaurant toolbox"
+        self.alias  = "restaurant"
+
+        # List of tool classes associated with this toolbox
+        self.tools = [ViewFoodType] 
+
+#define restaurant tool
+class ViewFoodType(object):
+    def __init__(self):
+        self.label       = "Generate Restaurant Map by Food Category" #tool name
+        self.description = "View where restaurants are located in the Atlanta Counties (Fulton, Dekalb, Clayton) by popularity(# of reviews) or rating(scale 1-5) according to Yelp Data" #tool description
+
+    def getParameterInfo(self):
+        #Define parameter definitions
+
+        # Input Features(the restaurant original cleaned data) parameter
+        in_features = arcpy.Parameter(
+            displayName="Input Features", #name of parameter on ArcGIS UI
+            name="in_features",
+            datatype="GPFeatureLayer", #inputted data type must be a feature layer
+            parameterType="Required", #not optional that this parameter is provided
+            direction="Input")
+
+        # Food Type parameter
+        food_type = arcpy.Parameter(
+            displayName="Food Type", #name of parameter on ArcGIS UI
+            name="food_type",
+            datatype="GPString", #inputted data type must be text
+            parameterType="Required", #not optional that this parameter is provided
+            direction="Input")
+        
+        #sets the food type parameter property to be a dropdown list in the ArcGIS UI of the custom defined food groups
+        food_type.filter.type = "ValueList"
+        food_type.filter.list = ["American","African","Australian","Bakery","Barbeque","Bars","Breakfast","Cafe","Central American",
+                                 "East African","East Asian","Eastern European","English","European","Food Hall","French","Inclusive Foods",
+                                 "Indian","Japanese","Korean","Mediterranean","Mexican","Middle Eastern","North African","Northern European",
+                                 "Other","Seafood","Soup","South African","South American""Southeast Asian","Southern Food","Spanish","West African"]
+
+        # Popularity(Review Count) or Quality parameter
+        topic = arcpy.Parameter(
+            displayName="topic", #name of parameter on ArcGIS UI
+            name="topic",
+            datatype="GPString", #inputted data type must be text
+            parameterType="Required", #not optional that this parameter is provided
+            direction="Input")
+
+        #sets the food type parameter property to be a dropdown list in the ArcGIS UI of the two analysis options within a food group
+        topic.filter.type = "ValueList"
+        topic.filter.list = ["Popularity","Rating"]
+
+        parameters = [in_features, food_type, topic] #setting parameters above to be returned globally when the GetParametersInfo function is called
+        
+        return parameters
+    
+    #checks for a License
+    def isLicensed(self):
+        return True
+
+    #updates any messages which is none right now
+    def updateMessages(self, parameters):
+        return
+    
+    #cutom tool code executed to perform food restaurant analysis
+    def execute(self, parameters, messages):
+        
+        #gets parameters defined above from user input
+        inFeatures  = parameters[0].valueasText
+        food_type   = parameters[1].valueAsText
+        topic = parameters[2].valueAsText
+
+        #sets custom title for output map/layer generated from running the tool
+        inFeatures2 = food_type+topic+"OutputShapefile"
+
+        #allows tool to overwrite outputted maps with the same parameters
+        arcpy.env.overwriteOutput = True
+
+        #sets UI names for topic options to attribute field data headers
+        topic_dict = {"Popularity":"rvw_cnt","Rating":"rating"}
+        field_name = topic_dict[topic]
+
+        #defines what yelp tags are searched for given a user's selection in the ArcGIS UI
+        food_dict = {"American":["American", "Asian Fusion", "Barbeque", "Breakfast","Brunch","Pancakes","Buffets","Burgers", "Cajun", "Creole", "Cheesesteaks", "Chicken Wings", "Chicken Shop","Comfort Food","Delis","Diners","Fast Food", "Gastropubs","Hawaiian","Hot Dogs","Pizza", "Salad","Sandwiches","Soul Food", "Southern", "Steakhouses","Soup","Tex","Waffles","Wraps", "Poutineries"],
+                    "African":["African", "Senegalese", "Eritrean","Ethiopian","Mauritius", "Somali", "Moroccan", "South African"],
+                    "Australian":["Australian"],
+                    "Bakery":["Bakeries"],
+                    "Barbeque":["Barbeque"],
+                    "Bars":["Bar"],
+                    "Breakfast":["Breakfast","Brunch","Pancakes","Waffles"],
+                    "Cafe":["Cafes","Themed Cafes", "Coffee"],
+                    "Central American":["Honduran","Latin American","Salvadoran","Nicaraguan"], 
+                    "East African":["Eritrean","Ethiopian","Mauritius", "Somali"],
+                    "East Asian":["Asian Fusion", "Chinese","Cantonese","Dim Sum","Hainan","Shanghainese","Szechuan", "Hong Kong Style Cafe","Hot Pot","Japanese","Conveyor","Belt","Sushi","Izakaya","Japanese Curry","Ramen","Teppanyaki","Korean","Sushi Bars","Taiwanese", "Mongolian","Noodles","Pan Asia"],
+                    "Eastern European":["Austrian","Bulgarian","Czech", "German","Hungarian","Polish","Slovakian","Ukrainian"],
+                    "English":["British","Chips","Irish","Scottish"],
+                    "European":["Austrian", "Basque", "Belgian","Brasseries","British","Bulgarian","Catalan","Creperies","Czech", "Chips", "French", "Greek","Hungarian","Iberian","Irish","Italian","Calabrian","Sardinian","Sicilian","Tuscan", "Modern European","Polish", "Portuguese","Russian","Scandinavian","Scottish","Slovakian","Spanish", "Tapas Bars","Tapas","Small Plates", "Ukrainian","Uzbek", "German","Fondue"],
+                    "Food Hall":["Food Court","Food Stands", "Up Restaurants"],
+                    "French":["Brasseries", "Creperies", "French"],
+                    "Inclusive Foods":["Gluten-Free","Kosher","Halal","Vegan","Vegetarian"],
+                    "Indian":["Bangladeshi","Indian","Pakistani","Himalayan","Nepalese","Sri Lankan"],
+                    "Japanese":["Japanese","Conveyor","Belt","Sushi","Izakaya","Japanese Curry","Ramen","Teppanyaki","Sushi Bars"],
+                    "Korean":["Korean"],
+                    "Mediterranean":["Falafel", "Mediterranean","Egyptian","Kebab", "Italian"],
+                    "Mexican":["Mexican","Tacos","New Mexican Cuisine","Mex"],
+                    "Middle Eastern":["Middle Eastern","Afghan", "Arabian", "Armenian", "Halal","Kosher","Falafel","Egyptian","Lebanese","Turkish","Georgian","Kebab","Persian","Iranian","Syrian", "Uzbek"],
+                    "North African":["Moroccan"],
+                    "Northern European":["Russian","Scandinavian"],
+                    "Other":["Cafeteria","Dinner Theater", "Reunion","Game Meat","Live","Raw Food","Supper Clubs"],
+                    "Seafood":["Fish","Seafood"],
+                    "Soup":["Soup","Noodles"],
+                    "South African":["South African"],
+                    "South American":["Argentine","Brazilian","Latin American","Colombian","Venezuelan","Peruvian"],
+                    "Southeast Asian":["Asian Fusion", "Burmese","Cambodian", "Filipino", "Indonesian" ,"Laotian","Polynesian", "Singaporean","Thai","Vietnamese", "Malaysian","Noodles","Pan Asia"],
+                    "Southern Food":["Cajun", "Creole","Soul Food", "Southern","Waffles","Pancakes","Brunch"],
+                    "Spanish":["Iberian","Basque","Catalan", "Tapas","Tapas Bars","Small Plates", "Spanish","Portuguese"],
+                    "West African":["Senegalese"]}
+        food_tags = food_dict[food_type]
+
+        #Sets up the SQL string query syntax that arcpy uses
+        delimfield = arcpy.AddFieldDelimiters(inFeatures,"categrs")
+        sql_exp = []
+        #loops through every yelp food tag in the above list of a selected element fo the dictionary to search of all yelp tags in a food type category
+        for tag in food_tags:
+            delimtag = "'%" + tag + "%'"
+            sql_exp_part = delimfield + "NOT LIKE" + delimtag
+            sql_exp.append(sql_exp_part)
+        sql_exp = " And ".join(sql_exp)
+
+        #Creates a copy of the original data and deletes all restaurants that are not within the food type category selected by the user
+        arcpy.CopyFeatures_management(inFeatures,inFeatures2)
+        with arcpy.da.UpdateCursor(inFeatures2,["categrs"],sql_exp) as cursor:
+            for row in cursor:
+                cursor.deleteRow()
+        
+        #Defines the graduated color scheme for the newly generated layer
+        p = arcpy.mp.ArcGISProject("CURRENT") #select map
+        m = p.listMaps("Map")[0]
+        lyr_loc = r'C:\Users\billh\Desktop\CP6581\Week11\MyProject\MyProject.gdb\{0}'.format(inFeatures2)
+        messages.addMessage("{0} is location".format(lyr_loc))
+        m.addDataFromPath(lyr_loc)
+        lyr = m.listLayers(inFeatures2)[0] #select newly generated layer
+        if lyr.isFeatureLayer: #checks to see if layer can have symbology edited
+            sym = lyr.symbology
+        if hasattr(sym, 'renderer'): #checks to see if layer can have graduated color option
+            if sym.renderer.type == 'SimpleRenderer':
+                messages.addMessage("{0} is location".format(field_name))
+                sym.updateRenderer('GraduatedColorsRenderer') #set symbology to graduated colors
+                if field_name == "rating": #if the user selected rating as the topic to analyze then choose equal interval scheme
+                    sym.renderer.classificationField = field_name
+                    sym.renderer.classificationMethod = "EqualInterval"
+                    sym.renderer.breakCount = 4
+                else: #if user selected popularity as the topci to analyze then choose jenks breaks method scheme
+                    sym.renderer.classificationField = field_name
+                    sym.renderer.breakCount = 5
+                lyr.symbology = sym #update symbology changes
+
+
+    def postExecute(self, parameters):
+        return
+
+          </code>
+        </pre>
+
+
+      </div>
+    </section>
+
+    <!-- ======= Testimonials Section ======= -->
+    <section class="section pt-0">
+      <div class="container">
+
+        <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                  <div class="testimonial-wrap">
+                    <div class="testimonial">
+                      <img src="assets/img/person_1.jpg" alt="Image" class="img-fluid">
+                      <blockquote>
+                        <p>I wanted to thank you... for your leadership and dedication to this project... You really shaped this project and implemented a vision for it... I really trusted your work. You elevated this project beyond what would have been possible had we not had you on board.</p>
+                      </blockquote>
+                      <p>&mdash; City of Atlanta Department of City Planning Supervisor</p>
+                    </div>
+                  </div>
+                </div><!-- End testimonial item -->
+    
+                <div class="swiper-slide">
+                  <div class="testimonial-wrap">
+                    <div class="testimonial">
+                      <img src="assets/img/person_2.jpg" alt="Image" class="img-fluid">
+                      <blockquote>
+                        <p>You did a great job... from coming up to speed quickly on how to best work with our team to completing all tasks efficiently and with a high quality of work. For every task given, especially larger ones, you were good at taking ownership of the project with minimal direction needed.</p>
+                      </blockquote>
+                      <p>&mdash; East West Manufacturing Supervisor</p>
+                    </div>
+                  </div>
+                </div><!-- End testimonial item -->
+                
+                <div class="swiper-slide">
+                  <div class="testimonial-wrap">
+                    <div class="testimonial">
+                      <img src="assets/img/person_3.jpg" alt="Image" class="img-fluid">
+                      <blockquote>
+                        <p>I am very pleased with your performance, team spirit, self-starter mentality, and leadership. I am very pleased... with your ability to move a project from concept to reality... you have helped get us... strong infrastructure, technical capability, programming</p>
+                      </blockquote>
+                      <p>&mdash; Center for Sustainable Communities Supervisor</p>
+                    </div>
+                  </div>
+                </div><!-- End testimonial item -->
+    
+    
+            </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section><!-- End Testimonials Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <p class="mb-1">&copy; Copyright MyPortfolio. All Rights Reserved</p>
+          <div class="credits">
+            <!--
+            All the links in the footer should remain intact.
+            You can delete the links only if you purchased the pro version.
+            Licensing information: https://bootstrapmade.com/license/
+            Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=MyPortfolio
+          -->
+            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+          </div>
+        </div>
+        <div class="col-sm-6 social text-md-end">
+          <a href="https://linkedin.com/in/billhuangprofile"><span class="bi bi-linkedin"></span></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
